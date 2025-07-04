@@ -1,0 +1,14 @@
+services:
+  api:
+    # Nome do contêiner para fácil referência
+    build: .
+    container_name: gestao_escolar_api
+    volumes:
+      # Mapeia o diretório 'app' local para o diretório de trabalho no contêiner
+      - .:/app
+      # Isso permite o hot-reloading
+    ports:
+      - "8000:8000"
+    # Política de reinicialização para garantir que o serviço se recupere de falhas
+    # restart: unless-stopped
+
